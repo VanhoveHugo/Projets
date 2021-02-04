@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Montez&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+body {
+  background: lightgoldenrodyellow;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+*:focus {
+  outline: none;
+}
+
+h1 {
+  font-family: 'Montez', cursive;
+  font-size: 4rem;
+  text-align: center;
+  margin: 2rem 0 3rem;
+}
+
+.header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 10;
+}
+
+.header.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+}
+
+.header li {
+  position: relative;
+  list-style: none;
+  margin: 0 1rem;
+}
+
+.btn {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  overflow: hidden;
+  width: auto;
+}
+
+.btn::before {
+  position: absolute;
+  content: '';
+  bottom: -25%;
+  left: 50%;
+  width: 75%;
+  height: 10px;
+  z-index: -5;
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.btn.active::before, .btn:hover::before {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #f6a8c9;
+}
+
+.btn:hover ~ .list {
+  visibility: visible;
+}
+
+.admin {
+  position: absolute;
+  top: -1rem;
+  left: 1rem;
+  padding: 2rem 1.5rem 1rem;
+  background: #900f45;
+  color: lightgoldenrodyellow;
+  font-weight: bold;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.admin:hover {
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
+}
+
+.loupe {
+  position: relative;
+  height: .6rem;
+  width: .6rem;
+  cursor: pointer;
+  margin: 0 1rem;
+  -webkit-transform: translate(0, -0.25rem) scale(2);
+          transform: translate(0, -0.25rem) scale(2);
+  -webkit-transition: background 400ms, color 400ms;
+  transition: background 400ms, color 400ms;
+}
+
+.loupe .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.5);
+          transform: translate(-50%, -50%) scale(0.5);
+}
+
+.loupe:hover {
+  color: #900f45;
+}
+
+.list {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
+  visibility: hidden;
+  background: #fff;
+  padding: .5rem;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  white-space: nowrap;
+}
+
+.list .list-item {
+  margin: .1rem 0;
+  padding: .2rem .4rem;
+  border-radius: 5px;
+  -webkit-transition: background 400ms, color 400ms;
+  transition: background 400ms, color 400ms;
+  color: #900f45;
+  font-weight: bold;
+}
+
+.list .list-item:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: black !important;
+}
+
+.list .list-item.active {
+  color: #900f45;
+}
+
+.list:hover {
+  visibility: visible;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem;
+}
+
+form .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem 0;
+}
+
+form .row input {
+  border-bottom: 2px solid black;
+  margin: .5rem 0;
+}
+
+form [type="submit"] {
+  border: 2px solid black;
+  padding: .5rem 1rem;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer p a {
+  text-decoration: underline;
+}
+
+.alert {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  text-align: left;
+  background: #fff;
+  padding: 1rem 2rem;
+  border-left: 2px solid #900f45;
+  opacity: 0;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.ariane span {
+  opacity: .7;
+  cursor: default;
+}
+
+.social {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+$contrast: #900f45;
+$base: lightgoldenrodyellow;
+
+body {
+    background: $base;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+h1 {
+    font-family: 'Montez', cursive;
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem 0 3rem;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 10;
+
+    &.sticky {
+        position: sticky;
+        top: 1rem;
+    }
+    li {
+        position: relative;
+        list-style: none;
+        margin: 0 1rem;
+    }
+}
+.btn {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    overflow: hidden;
+    width: auto;
+
+    &::before {
+        position: absolute;
+        content: '';
+        bottom: -25%;
+        left: 50%;
+        width: 75%;
+        height: 10px;
+        z-index: -5;
+        transform: translate(-100%, -50%);
+        transition: all 400ms ease;
+        user-select: none;
+    }
+
+    &.active::before, &:hover::before {
+        transform: translate(-50%, -50%);  
+        background: lighten($contrast, 50%);
+    }
+    &:hover {
+        ~.list {
+            visibility: visible;
+        }
+    }
+}
+.admin {
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    padding: 2rem 1.5rem 1rem;
+    background: $contrast;
+    color: $base;
+    font-weight: bold;
+    transition: transform 400ms;
+    transform-origin: top left;
+    &:hover {
+        transform: translateY(1rem);
+    }
+}
+.loupe {
+    position: relative;
+    height: .6rem;
+    width: .6rem;
+    cursor: pointer;
+    margin: 0 1rem;
+    transform: translate(0, -.25rem) scale(2);
+    transition: background 400ms, color 400ms;
+
+    .fas {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(.5);
+    }
+    &:hover {
+        color: $contrast;
+    }
+}
+
+.list {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    visibility: hidden;
+    background: #fff;
+    padding: .5rem;
+    text-transform: uppercase;
+
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+
+    .list-item {
+        margin: .1rem 0;
+        padding: .2rem .4rem;
+        border-radius: 5px;
+        transition: background 400ms, color 400ms;
+        color: $contrast;
+        font-weight: bold;
+
+        &:hover {
+            background: rgba(black, .1);
+            color: black !important;
+        }
+        &.active {
+            color: $contrast
+        }
+    }
+    &:hover {
+        visibility: visible;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+
+        input {
+            border-bottom: 2px solid black;
+            margin: .5rem 0;
+        }
+    }
+    [type="submit"] {
+        border: 2px solid black;
+        padding: .5rem 1rem;
+    }
+}
+
+footer {
+    p {
+        text-align: center;
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+.alert {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    text-align: left;
+    background: #fff;
+    padding: 1rem 2rem;
+    border-left: 2px solid $contrast;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: all 400ms;
+}
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ariane {
+    span {
+        opacity: .7;
+        cursor: default;
+    }
+}
+.social {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    
+}
