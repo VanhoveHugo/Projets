@@ -25,6 +25,9 @@
             case "login.php":
                 echo '<a href="index.php">Acceuil</a> / <span>Connexion</span>';
                 break;
+            case "edit.php":
+                echo '<a href="index.php">Acceuil</a> / <span>Mon compte</span>';
+                break;
         }
     ?>
 </div>

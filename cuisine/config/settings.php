@@ -5,10 +5,6 @@ session_start();
 try { $db = new PDO('mysql:dbname=cuisine;charset=utf8;host:localhost', 'root', ''); }
 catch(Exception $e){ die('Erreur :'.$e->getMessage()); }
 
-$req_users = $db->prepare('SELECT * FROM users ORDER BY id ASC');
-$req_users->execute();
-
-
 function flash_in($type, $message) {
     if(empty( $_SESSION['message'])) 
         $_SESSION['message'] = [];

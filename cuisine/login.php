@@ -4,10 +4,17 @@
     <title>Inscription - Blog Cuisine</title>
 </head>
 <body>
+
 <?php 
     include 'config/settings.php';
     include 'includes/header.php'; 
     include 'includes/ariane.php'; 
+?>
+
+<?php
+    if(!empty($_SESSION['user'])) {
+        header('Location: edit.php');
+    }
 ?>
 
 <?php include 'includes/nav.php' ?>

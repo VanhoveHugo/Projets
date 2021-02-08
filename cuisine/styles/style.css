@@ -4,13 +4,15 @@ body {
   background: lightgoldenrodyellow;
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: scroll;
 }
 
 *:focus {
   outline: none;
 }
 
-h1 {
+.title {
   font-family: 'Montez', cursive;
   font-size: 4rem;
   text-align: center;
@@ -212,12 +214,29 @@ form [type="submit"] {
   padding: .5rem 1rem;
 }
 
-footer p {
-  text-align: center;
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: .5rem 0;
+  font-size: 12px;
+  width: 80%;
+  margin: auto;
 }
 
-footer p a {
+footer a:hover {
   text-decoration: underline;
+}
+
+footer .legal a {
+  margin: 0 1rem;
 }
 
 .alert {
@@ -233,6 +252,11 @@ footer p a {
           transform: translateY(-100px);
   -webkit-transition: all 400ms;
   transition: all 400ms;
+  font-weight: bold;
+}
+
+.alert-error {
+  color: #900f45;
 }
 
 .visible {
@@ -250,5 +274,182 @@ footer p a {
   position: absolute;
   top: 50%;
   right: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.social i {
+  margin: 20px 0;
+}
+
+.edit {
+  position: relative;
+  width: 350px;
+  height: 200px;
+  padding: 20px;
+  margin: 4rem auto 2rem auto;
+  overflow: hidden;
+  border-radius: 25px;
+  text-align: center;
+  -webkit-box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.671);
+          box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.671);
+}
+
+.edit::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 350px;
+  height: 200px;
+  background-color: transparent;
+  border-radius: 25px;
+  -webkit-box-shadow: -3px -3px 7px #ffffffa6, 3px 3px 5px rgba(94, 104, 121, 0.712);
+          box-shadow: -3px -3px 7px #ffffffa6, 3px 3px 5px rgba(94, 104, 121, 0.712);
+}
+
+.edit .username {
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.edit .stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px 0 40px;
+}
+
+.edit .stats i {
+  margin: 0 .5rem;
+}
+
+.edit .stats .message, .edit .stats .love {
+  margin: 0 1.5rem;
+}
+
+.edit .rank {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+
+.FAQ {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.FAQ article {
+  width: 500px;
+  height: 75px;
+  padding: 1rem 2rem;
+  margin: .5rem 0;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  overflow: hidden;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.FAQ article.active {
+  height: auto;
+  background: #fff;
+}
+
+.FAQ article.active #open {
+  opacity: 0;
+  z-index: -50;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.FAQ article.active #close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.FAQ article div {
+  width: 100%;
+  height: 75px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.FAQ article #open {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.FAQ article #close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.FAQ h2 {
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.FAQ p {
+  margin-top: 1rem;
+  width: 90%;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.FAQ button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
 }
 /*# sourceMappingURL=style.css.map */
