@@ -3,9 +3,26 @@
         $file = $_SERVER['PHP_SELF'];
         $t = explode('/', $file);
         $path = array_pop($t);
+
         switch($path) {
             case "blog.php":
-                echo '<a href="index.php">Acceuil</a> / <span>Blog</span>';
+                if(!empty($_GET)) {
+                    if(!empty($_GET['filter'])) {
+                        switch($_GET['filter']) {
+                            case 'entrées':
+                                echo '<a href="index.php">Acceuil</a> / <a href="blog.php">Blog</a> / <span>Entrées</span>';
+                                break; 
+                            case 'plats':
+                                echo '<a href="index.php">Acceuil</a> / <a href="blog.php">Blog</a> / <span>Plats</span>';
+                                break; 
+                            case 'desserts':
+                                echo '<a href="index.php">Acceuil</a> / <a href="blog.php">Blog</a> / <span>Desserts</span>';
+                                break; 
+                        }
+                    }
+                } else {
+                    echo '<a href="index.php">Acceuil</a> / <span>Blog</span>';
+                }
                 break;
 
             case "about.php":

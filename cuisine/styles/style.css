@@ -1,7 +1,8 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montez&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 body {
-  background: lightgoldenrodyellow;
+  background: #fff;
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -88,7 +89,7 @@ body {
   left: 1rem;
   padding: 2rem 1.5rem 1rem;
   background: #900f45;
-  color: lightgoldenrodyellow;
+  color: #fff;
   font-weight: bold;
   -webkit-transition: -webkit-transform 400ms;
   transition: -webkit-transform 400ms;
@@ -227,7 +228,6 @@ footer {
           justify-content: space-between;
   padding: .5rem 0;
   font-size: 12px;
-  width: 80%;
   margin: auto;
 }
 
@@ -265,6 +265,10 @@ footer .legal a {
           transform: translateY(0);
 }
 
+.ariane {
+  padding: 1rem;
+}
+
 .ariane span {
   opacity: .7;
   cursor: default;
@@ -298,8 +302,8 @@ footer .legal a {
   overflow: hidden;
   border-radius: 25px;
   text-align: center;
-  -webkit-box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.671);
-          box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.671);
+  -webkit-box-shadow: inset -3px -3px 7px #ddd, inset 3px 3px 5px rgba(94, 104, 121, 0.671);
+          box-shadow: inset -3px -3px 7px #ddd, inset 3px 3px 5px rgba(94, 104, 121, 0.671);
 }
 
 .edit::before {
@@ -313,8 +317,8 @@ footer .legal a {
   height: 200px;
   background-color: transparent;
   border-radius: 25px;
-  -webkit-box-shadow: -3px -3px 7px #ffffffa6, 3px 3px 5px rgba(94, 104, 121, 0.712);
-          box-shadow: -3px -3px 7px #ffffffa6, 3px 3px 5px rgba(94, 104, 121, 0.712);
+  -webkit-box-shadow: -3px -3px 7px #ddd, 3px 3px 5px rgba(94, 104, 121, 0.712);
+          box-shadow: -3px -3px 7px #ddd, 3px 3px 5px rgba(94, 104, 121, 0.712);
 }
 
 .edit .username {
@@ -451,5 +455,54 @@ footer .legal a {
   height: 30px;
   background: transparent;
   border: none;
+}
+
+.selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.selector .yBox {
+  position: relative;
+  width: 330px;
+  height: 420px;
+  background: #111;
+  margin: 0 20px;
+}
+
+.selector legend {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  background: #fff;
+  padding: 1rem 0;
+  width: calc(100% - 100px);
+  text-align: center;
+}
+
+.selector .entrée {
+  background: url("https://fac.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2FFAC.2Fvar.2Ffemmeactuelle.2Fstorage.2Fimages.2Fcuisine.2Frecettes-de-cuisine.2F45-recettes-entrees-froides-diner-ete-51702.2F15022868-1-fre-FR.2F45-recettes-d-entrees-froides-pour-vos-diners-d-ete.2Ejpg/850x478/quality/90/crop-from/center/45-recettes-d-entrees-froides-pour-vos-diners-d-ete.jpeg") no-repeat center center/cover;
+}
+
+.selector .plat {
+  background: url("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/les-dossiers-de-la-redaction/news-de-la-redaction/ces-plats-sont-plus-rapides-a-preparer-qu-a-faire-livrer-3679031/86933159-2-fre-FR/Ces-plats-sont-plus-rapides-a-preparer-qu-a-faire-livrer.jpg") no-repeat center center/cover;
+}
+
+.selector .dessert {
+  background: url("https://1k9ch93e3xh2t4pa12vvmx1t-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/Easy-No-Bake-Chestnut-Trifles_2.jpg") no-repeat center center/cover;
+}
+
+@media (min-width: 1000px) {
+  body {
+    padding: 0 10vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */

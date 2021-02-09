@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 $contrast: #900f45;
-$base: lightgoldenrodyellow;
+$base: #fff;
 
 body {
     background: $base;
@@ -169,7 +169,6 @@ footer {
     justify-content: space-between;
     padding: .5rem 0;
     font-size: 12px;
-    width: 80%;
     margin: auto;
     a:hover {
         text-decoration: underline;
@@ -201,6 +200,7 @@ footer {
 }
 
 .ariane {
+    padding: 1rem;
     span {
         opacity: .7;
         cursor: default;
@@ -227,7 +227,7 @@ footer {
     overflow: hidden;
     border-radius: 25px;
     text-align: center;
-    box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.671);
+    box-shadow: inset -3px -3px 7px #ddd, inset 3px 3px 5px rgba(94, 104, 121, 0.671);
     &::before {
         content: '';
         position: absolute;
@@ -238,7 +238,7 @@ footer {
         height: 200px;
         background-color: transparent;
         border-radius: 25px;
-	    box-shadow: -3px -3px 7px #ffffffa6, 3px 3px 5px rgba(94, 104, 121, 0.712);
+	    box-shadow: -3px -3px 7px #ddd, 3px 3px 5px rgba(94, 104, 121, 0.712);
     }    
     .username {
         font-weight: bold;
@@ -333,5 +333,48 @@ footer {
         height: 30px;
         background: transparent;
         border: none;
+    }
+}
+
+.selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .yBox {
+        position: relative;
+        width: 330px;
+        height: 420px;
+        background: #111;
+        margin: 0 20px;
+    }
+    legend {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        background: #fff;
+        padding: 1rem 0;
+        width: calc(100% - 100px);
+        text-align: center;
+    }
+    .entrée {
+        background: url('https://fac.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2FFAC.2Fvar.2Ffemmeactuelle.2Fstorage.2Fimages.2Fcuisine.2Frecettes-de-cuisine.2F45-recettes-entrees-froides-diner-ete-51702.2F15022868-1-fre-FR.2F45-recettes-d-entrees-froides-pour-vos-diners-d-ete.2Ejpg/850x478/quality/90/crop-from/center/45-recettes-d-entrees-froides-pour-vos-diners-d-ete.jpeg') no-repeat center center / cover; 
+ 
+    }
+    .plat {
+        background: url('https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/les-dossiers-de-la-redaction/news-de-la-redaction/ces-plats-sont-plus-rapides-a-preparer-qu-a-faire-livrer-3679031/86933159-2-fre-FR/Ces-plats-sont-plus-rapides-a-preparer-qu-a-faire-livrer.jpg') no-repeat center center / cover; 
+    }
+    .dessert {
+        background: url('https://1k9ch93e3xh2t4pa12vvmx1t-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/Easy-No-Bake-Chestnut-Trifles_2.jpg') no-repeat center center / cover; 
+    }
+}
+
+
+
+
+
+
+@media (min-width: 1000px) {
+    body {
+        padding: 0 10vw;
     }
 }

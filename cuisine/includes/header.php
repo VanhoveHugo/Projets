@@ -21,22 +21,22 @@
     <li>
         <a href="blog.php" class="btn <?php if($path=='blog.php') echo 'active'; ?>">blog</a>
         <div class="list">
-            <a href='index.php?filter=entrées' class="list-item">Entrées <?= $e->rowCount() ?></a>
-            <a href='index.php?filter=plats' class="list-item">Plats <?= $p->rowCount() ?></a>
-            <a href='index.php?filter=desserts' class="list-item">Desserts <?= $d->rowCount() ?></a>
+            <a href='blog.php?filter=entrées' class="list-item">Entrées <?= $e->rowCount() ?></a>
+            <a href='blog.php?filter=plats' class="list-item">Plats <?= $p->rowCount() ?></a>
+            <a href='blog.php?filter=desserts' class="list-item">Desserts <?= $d->rowCount() ?></a>
         </div>
     </li>
     <li>
-        <a href="about.php" class="btn <?php if($path=='about.php') echo 'active'; ?>">A propos</a>
+        <a href="about.php" class="btn <?php if($path=='about.php' || $path=='FAQ.php') echo 'active'; ?>">A propos</a>
         <div class="list">
             <a href="FAQ.php" class="list-item">FAQ</a>
         </div>
     </li>
     <li>
-        <a href="contact.php" class="btn">contact</a>
+        <a href="contact.php" class="btn <?php if($path=='contact.php') echo 'active'; ?>">contact</a>
     </li>
     <li>
-        <a href="login.php" class="btn <?php if($path=='register.php' || $path=='signin.php') echo 'active'; ?>">mon compte</a>
+        <a href="login.php" class="btn <?php if($path=='register.php' || $path=='signin.php' || $path=='edit.php') echo 'active'; ?>">mon compte</a>
         <div class="list">
         <?php if(empty($_SESSION['user'])) { ?>
             <a href="register.php" class="list-item <?php if($path=='register.php') echo 'active'; ?>">S'inscrire</a>

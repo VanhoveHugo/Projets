@@ -11,10 +11,17 @@ if(empty(trim($_POST['markdown']))) {
     flash_in('error', 'markdown invalid');
 }
 
-
 $file = fopen("../categories/".$_POST['item'].".txt", "a+");
 
 fwrite($file, $_POST['markdown']);
+
+$img = '';
+if(!empty($_POST['img1'])) { $img.=$_POST['img1'].';'; };
+if(!empty($_POST['img2'])) { $img.=$_POST['img2'].';'; };
+if(!empty($_POST['img3'])) { $img.=$_POST['img3'].';'; };
+if(!empty($_POST['img4'])) { $img.=$_POST['img4'].';'; };
+if(!empty($_POST['img5'])) { $img.=$_POST['img5'].';'; };
+
 
 if($error)
 	header('Location: ../admin.php');
@@ -24,7 +31,7 @@ else
         ':t' => $_POST['item'],
         ':d' => $_POST['description'],
         ':c' => $_POST['categorie'],
-        ':i' => $_POST['img'],
+        ':i' => $img,
     ]);
 
     $messages = $_SESSION['user']['messages'] + 1;
@@ -33,8 +40,6 @@ else
         ':id' => $_SESSION['user']['id'],
     ]);
 
-    flash_in('succes', 'Your accout will be created');
-    header('Location: ../login.php');
+    flash_in('succes', 'Your item will be created');
+    header('Location: ../index.php');
     exit();
-	header('Location: ../index.php');
-exit();

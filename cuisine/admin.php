@@ -14,7 +14,27 @@
 <form action="core/admin.php" method='POST'>
     <input type="text" name='item' placeholder='nom du plat'>
     <input type="text" name='description' placeholder='description'>
-    <input type="file" name='img' multiple>
+
+    <div class="row">
+        <label for="">Header</label>
+        <input type="file" name='img1'>
+    </div>
+    <div class="row">
+        <label for="">Second</label>
+        <input type="file" name='img2'>
+    </div>
+    <div class="row">
+        <label for="">3</label>
+        <input type="file" name='img3'>
+    </div>
+    <div class="row">
+        <label for="">4</label>
+        <input type="file" name='img4'>
+    </div>
+    <div class="row">
+        <label for="">5</label>
+        <input type="file" name='img5'>
+    </div>
     <Select name='categorie'>
         <Option>entrée</Option>
         <Option>plat</Option>
