@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+$border: 2px;
+
+body {
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+
+    a{
+        text-decoration: none;
+        color: inherit;
+        padding: .5rem 1rem;
+        border-right: $border solid black;
+        &:first-child {
+            border-left: $border solid black;
+        }
+    }
+}
+
+
+main {
+    position: relative;
+    border-top: $border solid black;
+    border-bottom: $border solid black;
+    margin-bottom: 20px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: $border;
+        height: 22px;
+        transform: translate(-50%, 100%);
+        background: black;
+    }
+    .banner {
+        min-width: 100vw;
+        text-align: center;
+    }
+}
+
+article {
+    position: relative;
+    min-width: 500px;
+    white-space: nowrap;
+    border: $border solid black;
+    text-align: center;
+    margin: 20px 100px;
+    .legend {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: #000;
+        font-weight: bold;
+        background: #fff;
+    }
+    h2 {
+        font-weight: normal;
+    }
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .row {
+        position: relative;
+        max-height: 80px;
+    }
+    label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        user-select: none;
+        transition: top 400ms;
+    }
+    input:focus{
+        outline: none;
+        border-bottom: 3px solid black;
+    }
+    input {
+        margin: 2rem 0;
+        background: none;
+        border: none;
+        border-bottom: 1px solid black;
+        transition: border-bottom 200ms;
+    }
+    input[type='submit'] {
+        border: $border solid black;
+        padding: .5rem 1rem;
+    }
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    p {
+        position: relative;
+        display: inline-block;
+        padding-top: .5rem;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            width: 80%;
+            height: $border;
+            background: black;
+        }
+    }
+}
+.alert {
+    position: fixed;
+    outline: $border solid black;
+    top: 0;
+    right: 2rem;
+    padding: .5rem 1rem;
+    z-index: 1000;
+}
+.active {
+    text-decoration: underline;
+}
