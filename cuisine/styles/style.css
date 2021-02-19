@@ -20,6 +20,13 @@ body {
   margin: 2rem 0 3rem;
 }
 
+button.white {
+  background: #fff;
+  padding: .5em 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .header {
   width: 100%;
   display: -webkit-box;
@@ -478,13 +485,12 @@ footer .legal a {
   margin: 0 20px;
 }
 
-.selector legend {
+.selector button {
   position: absolute;
   bottom: 50px;
   left: 50px;
-  background: #fff;
-  padding: 1rem 0;
   width: calc(100% - 100px);
+  height: 50px;
   text-align: center;
 }
 
@@ -498,6 +504,110 @@ footer .legal a {
 
 .selector .dessert {
   background: url("https://1k9ch93e3xh2t4pa12vvmx1t-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/Easy-No-Bake-Chestnut-Trifles_2.jpg") no-repeat center center/cover;
+}
+
+.hero article {
+  height: 60vh;
+  margin: 10vh 0;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero article figure {
+  position: relative;
+  width: 700px;
+  height: 600px;
+  overflow: hidden;
+  -webkit-clip-path: inset(0 0 0 100%);
+          clip-path: inset(0 0 0 100%);
+  -webkit-animation: 2s Anim cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: 2s Anim cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.hero article figure img {
+  min-height: 100%;
+  min-width: 600px;
+}
+
+.text_hero {
+  width: 700px;
+  height: 600px;
+  background: #fff;
+  -webkit-animation: 2s Color cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: 2s Color cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.text_hero .box {
+  display: inline-block;
+  border: 1px solid #000;
+  font-weight: bold;
+  padding: .5em 1rem;
+  margin: 2rem;
+}
+
+.text_hero h1 {
+  margin: 1rem;
+  font-size: 3.5rem;
+  width: 80%;
+}
+
+.text_hero .desc {
+  line-height: 2;
+  height: 4rem;
+}
+
+.text_hero button {
+  margin: 2rem;
+}
+
+@-webkit-keyframes Anim {
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes Anim {
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+
+@-webkit-keyframes Color {
+  to {
+    background: lightcoral;
+  }
+}
+
+@keyframes Color {
+  to {
+    background: lightcoral;
+  }
 }
 
 @media (min-width: 1000px) {

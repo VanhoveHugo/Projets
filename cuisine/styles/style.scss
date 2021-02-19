@@ -23,6 +23,13 @@ body {
     margin: 2rem 0 3rem;
 }
 
+button.white {
+    background: #fff;
+    padding: .5em 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .header {
     width: 100%;
     display: flex;
@@ -347,13 +354,12 @@ footer {
         background: #111;
         margin: 0 20px;
     }
-    legend {
+    button {
         position: absolute;
         bottom: 50px;
         left: 50px;
-        background: #fff;
-        padding: 1rem 0;
         width: calc(100% - 100px);
+        height: 50px;
         text-align: center;
     }
     .entrée {
@@ -369,7 +375,67 @@ footer {
 }
 
 
+.hero {
+    article {
+        height: 60vh;
+        margin: 10vh 0;
+        width: 80vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        figure {
+            position: relative;
+            width: 700px;
+            height: 600px;
+            overflow: hidden;
+            clip-path: inset(0 0 0 100%);
+            animation: 2s Anim cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            img {
+                min-height: 100%;
+                min-width: 600px;
+            }
+        }
+    }
+}
+.text_hero {
+    width: 700px;
+    height: 600px;
+    background: $base;
+    animation: 2s Color cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .box {
+        display: inline-block;
+        border: 1px solid #000;
+        font-weight: bold;
+        padding: .5em 1rem;
+        margin: 2rem;
+    }
+    h1 {
+        margin: 1rem; 
+        font-size: 3.5rem;
+        width: 80%;
+    }
+    .desc {
+        line-height: 2;
+        height: 4rem;
+    }
+    button {
+        margin: 2rem;
+    }
+}
 
+
+@keyframes Anim{
+    to{clip-path: inset(0 0 0 0);}
+}
+@keyframes Color {
+    to{background: lightcoral;}
+}
 
 
 

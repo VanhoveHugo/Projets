@@ -16,24 +16,12 @@
     <input type="text" name='description' placeholder='description'>
 
     <div class="row">
-        <label for="">Header</label>
-        <input type="file" name='img1'>
+        <label for="">Première page</label>
+        <input type="file" name='img'>
     </div>
     <div class="row">
-        <label for="">Second</label>
-        <input type="file" name='img2'>
-    </div>
-    <div class="row">
-        <label for="">3</label>
-        <input type="file" name='img3'>
-    </div>
-    <div class="row">
-        <label for="">4</label>
-        <input type="file" name='img4'>
-    </div>
-    <div class="row">
-        <label for="">5</label>
-        <input type="file" name='img5'>
+        <label for="">Toutes les autres photos</label>
+        <input type="file" name='imgs[]' multiple>
     </div>
     <Select name='categorie'>
         <Option>entrée</Option>

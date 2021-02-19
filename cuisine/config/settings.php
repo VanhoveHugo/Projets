@@ -2,6 +2,8 @@
 
 session_start();    
 
+define("BASE_URL", "http://localhost:8888/cuisine");
+
 try { $db = new PDO('mysql:dbname=cuisine;charset=utf8;host:localhost', 'root', ''); }
 catch(Exception $e){ die('Erreur :'.$e->getMessage()); }
 

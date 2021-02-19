@@ -11,9 +11,18 @@
     include 'includes/ariane.php'; 
 ?>
 
-
-<div id="hero">
-
+<div class="hero">
+    <article>
+        <figure>
+            <img src="https://guten-blog.cmsmasters.net/wp-content/uploads/2019/01/slide2-1.jpg" alt="">
+        </figure>
+        <div class="text_hero">
+            <div class="box">Fast Food</div>
+            <h1>La recette du meilleur tacos</h1>
+            <div class="desc"></div>
+            <a href="#MDr"><button class='white'>Découvrir</button></a>                
+        </div>
+    </article>
 </div>
 
 <div class="social">
@@ -33,17 +42,17 @@
 <div class="selector">
     <a href="blog.php?filter=entrées">
         <article class='yBox entrée'>
-            <legend>Entrées</legend>
+            <button class='white'>Entrées</button>
         </article>
     </a>
     <a href="blog.php?filter=plats">
         <article class='yBox plat'>
-            <legend>Plats</legend>
+            <button class='white'>Plats</button>
         </article>
     </a>
     <a href="blog.php?filter=desserts">
         <article class='yBox dessert'>
-            <legend>Desserts</legend>
+            <button class='white'>Desserts</button>
         </article>
     </a>
 </div>
