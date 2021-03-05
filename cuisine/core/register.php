@@ -6,9 +6,9 @@ $error = false;
 var_dump($_POST);
 
 if(!empty($_POST)) {
-    if(empty(trim($_POST['username']))) {
+    if(empty(trim($_POST['username']) OR !preg_match('/^[a-z0-9]+$/',$_POST['username']))) {
         $error = true;
-        flash_in('error', 'username not defined');
+        flash_in('error', 'username');
     }
     if(empty(trim($_POST['password']))) {
         $error = true;

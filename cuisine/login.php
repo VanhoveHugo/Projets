@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <head>
-    <?php include 'includes/head.php' ?>
+    <?php include 'config/settings.php'; include 'includes/head.php' ?>
     <title>Inscription - Blog Cuisine</title>
 </head>
 <body>
 
 <?php 
-    include 'config/settings.php';
     include 'includes/header.php'; 
     include 'includes/ariane.php'; 
 ?>

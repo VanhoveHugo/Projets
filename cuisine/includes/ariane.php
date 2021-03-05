@@ -9,19 +9,32 @@
             if(!empty($_GET)) {
                 if(!empty($_GET['filter'])) {
                     switch($_GET['filter']) {
-                        case 'entrées':
+                        case 'Entrées':
                             echo '<a href="index.php">Acceuil</a> / <a href="blog.php">Blog</a> / <span>Entrées</span>';
                             break; 
-                        case 'plats':
+                        case 'Plats':
                             echo '<a href="index.php">Acceuil</a> / <a href="blog.php">Blog</a> / <span>Plats</span>';
                             break; 
-                        case 'desserts':
+                        case 'Desserts':
                             echo '<a href="index.php">Acceuil</a> / <a href="blog.php">Blog</a> / <span>Desserts</span>';
                             break; 
                     }
+
                 }
-            } else {
+            } else
                 echo '<a href="index.php">Acceuil</a> / <span>Blog</span>';
+            break;
+
+        case "details.php":
+            if(!empty($_GET)) {
+                if(!empty($_GET['id'])) {
+                    $req = $db->prepare('SELECT * FROM items WHERE id = :id');
+                    $req->execute([
+                        ':id' => $_GET['id']
+                    ]);
+                    $item = $req->fetch(PDO::FETCH_ASSOC);
+                    echo '<a href="index.php">Acceuil</a> / <a href="blog.php">Blog</a> / <a href="blog.php?filter='.$item['categorie'].'">'.$item['categorie'].'</a> / <span>'.$item['title'].'</span>';
+                }
             }
             break;
 

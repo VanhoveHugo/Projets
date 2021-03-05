@@ -2,10 +2,23 @@
 
 session_start();    
 
-define("BASE_URL", "http://localhost:8888/cuisine");
-
+define("BASE_URL", "http://localhost/cuisine/");
 try { $db = new PDO('mysql:dbname=cuisine;charset=utf8;host:localhost', 'root', ''); }
 catch(Exception $e){ die('Erreur :'.$e->getMessage()); }
+
+$cip = $_SERVER['REMOTE_ADDR'];
+$query = $db->prepare("SELECT * FROM visits WHERE ip_address=:cip");
+$query->execute([
+    ':cip' => $cip
+]);
+$query = $query->fetch(PDO::FETCH_ASSOC);
+
+if(empty($query)) {
+    $add = $db->prepare("INSERT INTO visits (ip_address) VALUES (:cip)");
+    $add->execute([
+        ':cip' => $cip
+    ]);
+};
 
 function flash_in($type, $message) {
     if(empty( $_SESSION['message'])) 

@@ -1,5 +1,5 @@
 <?php 
-include 'config/settings.php';
+include '../config/settings.php';
 
 if(!empty($_SESSION['user'])) {
     if($_SESSION['user']['access'] != 1)
@@ -11,7 +11,7 @@ if(!empty($_SESSION['user'])) {
 
 <!DOCTYPE html>
 <head>
-    <?php include 'includes/head.php' ?>
+    <?php include '../includes/head.php' ?>
     <title>Admin - Blog Cuisine</title>
     <script>
     $(function(){
@@ -22,9 +22,9 @@ if(!empty($_SESSION['user'])) {
             lang: 'fr',
             svgPath: 'img/icons.svg',
             btns: [
+                ['viewHTML'],
                 ['undo', 'redo'],
-                ['bold', 'underline'],
-                ['unorderedList'],
+                ['underline'],
                 ['removeformat'],
                 ['fullscreen']
             ]
@@ -37,21 +37,19 @@ if(!empty($_SESSION['user'])) {
 
 
 <?php 
-    include 'includes/header.php'; 
-    include 'includes/ariane.php'; 
+    include '../includes/header.php'; 
+    include '../includes/ariane.php'; 
 ?>
 
-<?php include 'includes/nav.php' ?>
-
-<form class='admin-form' action="core/admin.php" method='POST' enctype="multipart/form-data">
+<form class='admin-form' action="../core/admin.php" method='POST' enctype="multipart/form-data">
 
     <div class="row">
-        <label for=name>Nom du plat</label>
+        <label for=name>Nom du plat*</label>
         <input type="text" id='name' name=title placeholder='A long name'>
     </div>
 
     <div class="row">
-        <label for=ui-id-1>Catégorie</label>
+        <label for=ui-id-1>Catégorie*</label>
         <Select class='selectmenu' name='categorie'>
             <Option>Entrées</Option>
             <Option>Plats</Option>
@@ -60,16 +58,26 @@ if(!empty($_SESSION['user'])) {
     </div>
     
     <div class="row">
-        <div class=tags-container><span class=main-tag>Tags:</span><ul id='liste'></ul></div>
+        <label for=tags>Tags*</label>
         <input type="text" name='tags' id=tags>
+        <ul id='liste'></ul>
     </div>
 
     <div class="row">
-        <label for="ingredients">Ingredients</label>
+        <label for=preparation-time>Temps de préparation ( minutes )*</label>
+        <input type="number" name='preparation-time' id=preparation-time>
+    </div>
+    <div class="row">
+        <label for=cuisson-time>Temps de cuisson ( minutes )*</label>
+        <input type="number" name='cuisson-time' id=preparation-time>
+    </div>
+
+    <div class="row">
+        <label for="ingredients">Ingredients*</label>
         <textarea name='ingredients' id=ingredients></textarea>   
     </div>
     <div class="row">
-        <label for="préparation">Préparation</label>
+        <label for="préparation">Préparation*</label>
         <textarea name='preparation' id=préparation></textarea>   
     </div>
     <div class="row">
@@ -82,7 +90,7 @@ if(!empty($_SESSION['user'])) {
     </div>
 
     <div class="row">
-        <label for="head_img">Image de couverture</label>
+        <label for="head_img">Image de couverture*</label>
         <input type="file" name='header_img' id="head_img">
     </div>
     <div class="row">
@@ -94,8 +102,8 @@ if(!empty($_SESSION['user'])) {
         <button type="submit">Valider</button>
     </div>
 </form>
-<script src='js/split-tags.js'></script>
-<?php include 'includes/footer.php' ?>
+<script src='../js/split-tags.js'></script>
+<?php include '../includes/footer.php' ?>
 
 </body>
 </html>
